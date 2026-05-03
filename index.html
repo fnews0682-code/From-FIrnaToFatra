@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday, Fatra 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CURSOR GLOW EFFECT
+  ============================================================ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ============================================================
+       FLOATING PARTICLES BACKGROUND
+  ============================================================ -->
+  <div class="particles-container" id="particlesContainer"></div>
+
+  <!-- ============================================================
+       MUSIC PLAYER
+  ============================================================ -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-btn" id="musicBtn" title="Play/Pause Music">
+      <span class="music-icon" id="musicIcon">♪</span>
+    </button>
+    <span class="music-label">Background Music</span>
+  </div>
+
+  <!-- ============================================================
+       SCREEN 1 — OPENING (Envelope / Mystery)
+  ============================================================ -->
+  <section class="screen active" id="screen1">
+    <div class="stars-bg"></div>
+    <div class="opening-content">
+      <div class="envelope-wrapper">
+        <div class="envelope" id="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <div class="envelope-heart">💌</div>
+          </div>
+        </div>
+      </div>
+      <h1 class="opening-title fade-in-up" style="animation-delay:0.5s">
+        Ada sesuatu <em>untukmu</em>...
+      </h1>
+      <p class="opening-sub fade-in-up" style="animation-delay:1s">
+        Buka pelan-pelan ya 🌸
+      </p>
+      <button class="btn-main fade-in-up" style="animation-delay:1.5s" id="btnOpen">
+        Buka Suratnya ✉️
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 2 — WHO IS THIS FOR
+  ============================================================ -->
+  <section class="screen" id="screen2">
+    <div class="petals-bg" id="petalsBg"></div>
+    <div class="center-content">
+      <p class="label-from fade-in-up">Dari Firna, dengan sepenuh hati 🌷</p>
+      <h1 class="big-name fade-in-up" style="animation-delay:0.3s">
+        Untuk<br/>
+        <span class="name-highlight">Fatra Algheno Akbar</span>
+      </h1>
+      <p class="tagline fade-in-up" style="animation-delay:0.6s">
+        Di hari yang paling spesial ini ✨
+      </p>
+      <div class="date-badge fade-in-up" style="animation-delay:0.9s">
+        🎂 Selamat Ulang Tahun 🎂
+      </div>
+      <button class="btn-main fade-in-up" style="animation-delay:1.2s" id="btnScreen2">
+        Lanjut yuk →
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 3 — A MESSAGE FOR YOU
+  ============================================================ -->
+  <section class="screen" id="screen3">
+    <div class="glow-bg"></div>
+    <div class="message-content">
+      <div class="section-tag fade-in-up">💬 Pesan Untukmu</div>
+      <h2 class="section-title fade-in-up" style="animation-delay:0.2s">
+        Hey, Fatra... 👋
+      </h2>
+      <div class="typewriter-box fade-in-up" style="animation-delay:0.4s">
+        <p class="typewriter-text" id="typewriterText"></p>
+        <span class="cursor-blink">|</span>
+      </div>
+      <button class="btn-main fade-in-up" style="animation-delay:0.6s; opacity:0" id="btnScreen3">
+        Masih ada lagi 💖
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 4 — THINGS I LOVE ABOUT YOU
+  ============================================================ -->
+  <section class="screen" id="screen4">
+    <div class="bokeh-bg"></div>
+    <div class="loves-content">
+      <div class="section-tag fade-in-up">🌟 Hal yang aku suka dari kamu</div>
+      <h2 class="section-title fade-in-up" style="animation-delay:0.2s">Kamu itu...</h2>
+      <div class="love-cards-grid" id="loveCardsGrid">
+        <!-- Cards injected by JS -->
+      </div>
+      <button class="btn-main" id="btnScreen4" style="opacity:0; margin-top:2rem; transition: opacity 0.8s ease;">
+        Cerita selanjutnya →
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 5 — MEMORIES
+  ============================================================ -->
+  <section class="screen" id="screen5">
+    <div class="memories-bg"></div>
+    <div class="memories-content">
+      <div class="section-tag fade-in-up">📸 Kenangan Kita</div>
+      <h2 class="section-title fade-in-up" style="animation-delay:0.2s">Waktu yang nggak terlupakan</h2>
+      <div class="timeline" id="timeline">
+        <!-- Timeline items injected by JS -->
+      </div>
+      <button class="btn-main" id="btnScreen5" style="opacity:0; margin-top:2rem; transition: opacity 0.8s ease;">
+        Satu lagi nih 🎁
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 6 — SURPRISE / HIDDEN MESSAGE
+  ============================================================ -->
+  <section class="screen" id="screen6">
+    <div class="surprise-bg"></div>
+    <div class="surprise-content center-content">
+      <div class="gift-box" id="giftBox">
+        <div class="gift-lid">🎁</div>
+        <div class="gift-body"></div>
+      </div>
+      <h2 class="section-title fade-in-up" style="animation-delay:0.2s">
+        Ada hadiah kecil untukmu...
+      </h2>
+      <p class="sub-text fade-in-up" style="animation-delay:0.4s">
+        Klik untuk buka 👇
+      </p>
+      <button class="btn-surprise fade-in-up" style="animation-delay:0.6s" id="btnReveal">
+        ✨ Buka Sekarang ✨
+      </button>
+      <div class="hidden-message" id="hiddenMessage">
+        <div class="hidden-message-inner">
+          <p class="quote-text">"Kamu adalah salah satu alasan kenapa aku percaya bahwa orang baik masih ada di dunia ini. Tetap jadi kamu yang apa adanya — itu aja udah cukup bikin orang di sekitar kamu bahagia."</p>
+          <span class="quote-sig">— Firna 🌸</span>
+        </div>
+      </div>
+      <button class="btn-main" id="btnScreen6" style="opacity:0; margin-top:2rem; transition: opacity 0.8s ease;">
+        Menuju momen terbaik 🌟
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 7 — FINAL BIRTHDAY SCENE
+  ============================================================ -->
+  <section class="screen" id="screen7">
+    <canvas id="confettiCanvas"></canvas>
+    <div class="final-content">
+      <div class="cake-scene">
+        <div class="cake-container" id="cakeContainer">
+          <div class="candles-row">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
+          <div class="cake-top"></div>
+          <div class="cake-mid"></div>
+          <div class="cake-bot"></div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+
+      <div class="final-message fade-in-up" id="finalMessage" style="animation-delay:0.5s">
+        <div class="hbd-tag">🎉 Happy Birthday 🎉</div>
+        <h1 class="final-name">
+          Fatra Algheno Akbar
+        </h1>
+        <div class="final-hearts">❤️ 🌸 ✨ 🌸 ❤️</div>
+        <p class="final-wish">
+          Semoga di usiamu yang baru ini,<br/>
+          semua yang kamu impikan bisa terwujud,<br/>
+          semua langkahmu selalu diberkahi,<br/>
+          dan kebahagiaan selalu menemanin kamu<br/>
+          di mana pun kamu berada. 💫
+        </p>
+        <div class="final-from">
+          Dengan cinta,<br/>
+          <strong>Firna Ardiyana</strong> 🌷
+        </div>
+      </div>
+
+      <button class="btn-main glow-btn fade-in-up" style="animation-delay:1s" id="btnCelebrate">
+        🎊 Make a Wish! 🎊
+      </button>
+
+      <!-- Photo placeholder -->
+      <div class="photo-frame fade-in-up" id="photoFrame" style="animation-delay:1.2s">
+        <div class="photo-placeholder">
+          <span>📸</span>
+          <p>Foto spesial kita</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROGRESS DOTS
+  ============================================================ -->
+  <div class="progress-dots" id="progressDots">
+    <span class="dot active" data-screen="1"></span>
+    <span class="dot" data-screen="2"></span>
+    <span class="dot" data-screen="3"></span>
+    <span class="dot" data-screen="4"></span>
+    <span class="dot" data-screen="5"></span>
+    <span class="dot" data-screen="6"></span>
+    <span class="dot" data-screen="7"></span>
+  </div>
+
+  <!-- Audio element -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
